@@ -48,12 +48,14 @@ function App() {
   const sendData = useCallback(() => {
     telegram.sendData(JSON.stringify(shopItems));    
   }, [shopItems]);
+
   useEffect(() => {
-    telegram.onEvent("mainButtonClick", sendData);
-    return () => telegram.offEvent("mainButtonClick", sendData)
+    telegram.onEvent("mainButtonClicked", sendData);
+
+    return () => telegram.offEvent("mainButtonClicked", sendData)
   },[sendData])
   useEffect(() => {
-    setData(getData());
+    setData(getData()); 
   }, []);
   return (
     <div className="App">
