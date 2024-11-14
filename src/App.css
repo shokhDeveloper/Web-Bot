@@ -1,0 +1,33 @@
+body{
+    background-color: #000000db;
+    user-select: none;
+}
+.card_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.parent_info{
+    text-align: center;
+    color: #fff;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
+}
+.parent_price_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent_price_info button{
+    background: #47bb77c6;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
