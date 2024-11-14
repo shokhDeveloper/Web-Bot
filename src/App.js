@@ -1,5 +1,5 @@
 import "./App.css"
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import getData from "./database/db.js";
 import { Card } from "./components/index.jsx";
 function App() {
@@ -45,7 +45,13 @@ function App() {
     telegram.MainButton.text = "Sotib olish :)";
     telegram.MainButton.show();
   }
-
+  const sendData = useCallback(() => {
+    telegram.sendData(JSON.stringify(shopItems));    
+  }, [shopItems]);
+  useEffect(() => {
+    telegram.onEvent("mainButtonClick", sendData);
+    return () => telegram.offEvent("mainButtonClick", sendData)
+  },[sendData])
   useEffect(() => {
     setData(getData());
   }, []);
